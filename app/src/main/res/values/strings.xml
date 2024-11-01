@@ -2,4 +2,6 @@
     <string name="app_name">SuperQuiz</string>
     <string name="hello_blank_fragment">Welcome to SuperQuiz</string>
     <string name="messageText">What\'s your name ?</string>
+    <string name="textpardefaut">Please type your name</string>
+    <string name="btnName">Let\'s Play</string>
 </resources>
