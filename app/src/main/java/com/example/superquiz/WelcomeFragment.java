@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +33,12 @@ public class WelcomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        binding.letsplayButton.setEnabled(false);
+    }
+
     // Ajout du support du binding pour affichage et la liaison entre la classe xml et java
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -39,8 +47,31 @@ public class WelcomeFragment extends Fragment {
         // return inflater.inflate(R.layout.fragment_welcome, container, false);
         binding = FragmentWelcomeBinding.inflate(inflater, container, false);
 
-        binding.letsplayButton.setEnabled(false);
+        // Verifiez si la saisie de l'utilisateur n'est pas vide et dans ce cas autorisé le clic
+        binding.usernameEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                boolean isEmpty = editable.toString().isEmpty();
+                binding.letsplayButton.setEnabled(!isEmpty);
+            }
+        });
+
+        // Détecter le clic sur le bouton let's play pour demarrer le quiz
 
         return binding.getRoot();
     }
+
+
+
+
 }
