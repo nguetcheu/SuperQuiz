@@ -2,6 +2,8 @@ package com.example.superquiz;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -31,9 +33,10 @@ public class WelcomeFragment extends Fragment {
 
     // Ajout du support du binding pour affichage et la liaison entre la classe xml et java
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        // return inflater.inflate(R.layout.fragment_welcome, container, false);
         binding = FragmentWelcomeBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
