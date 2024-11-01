@@ -27,6 +27,7 @@
         />
 
     <EditText
+        android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints="@string/textpardefaut"
@@ -35,6 +36,7 @@
         android:hint="@string/textpardefaut" />
 
     <Button
+        android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="24dp"
