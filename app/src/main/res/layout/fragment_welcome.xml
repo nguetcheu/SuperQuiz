@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_gravity="center"
     tools:context=".WelcomeFragment">
+    <!-- layout gravity permet de definir le ositionnement des elements de facon globale -->
 
 
     <TextView
