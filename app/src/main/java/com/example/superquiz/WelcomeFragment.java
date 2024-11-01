@@ -5,9 +5,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,6 +70,18 @@ public class WelcomeFragment extends Fragment {
         });
 
         // Détecter le clic sur le bouton let's play pour demarrer le quiz
+        binding.letsplayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Naviguer vers le fragment de quizz
+                Log.d("Fanny", "click");
+                FragmentManager fragmentManager = getParentFragmentManager(); // Gestionnaire de fragment pour la redirection
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction(); // operation sur un fragment
+                QuizFragment quizFragment = new QuizFragment();
+                fragmentTransaction.replace(R.id.fragment_container_view, quizFragment);
+                fragmentTransaction.commit(); // Il faut toujours commiter une transaction
+            }
+        });
 
         return binding.getRoot();
     }
