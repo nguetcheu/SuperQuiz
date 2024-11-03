@@ -1,4 +1,4 @@
-package com.example.superquiz;
+package com.example.superquiz.Ui.quiz;
 
 import android.os.Bundle;
 
